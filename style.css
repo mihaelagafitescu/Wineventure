@@ -47,7 +47,7 @@ ul
 }
 
 .ng-valid.ng-dirty {
-    border-color: #674C47;
+    border-color: #78FA89;
 }
 
 #wineDetails {
@@ -76,14 +76,10 @@ ul
 
 .input-text {
     min-width:250px;
-    margin-bottom: 5px;
+    margin-left: 15px;
 }
 
 .input-select {
-    min-width:200px;
-    margin-bottom: 7px;
-}
-
-.jumbotron{
-    padding: 30px !important;
+    min-width:250px;
+    margin-left: 15px;
 }
