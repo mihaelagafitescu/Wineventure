@@ -83,3 +83,7 @@ ul
     min-width:250px;
     margin-left: 15px;
 }
+
+.jumbotron{
+    padding: 30px !important;
+}
