@@ -7,10 +7,24 @@
         site.tab = 1;
         site.showDetails =  false;
         site.wines = [];
-        site.opinions = [];
 
-        //for search
+
+        //for search from the topbar with keyword
         site.search = function (){
+            alert(site.keyword);
+            $http.get('freebaseK.json').success(function (data) {
+                var results = data;
+                site.wines = results;
+            }).error(function (error, status) {
+                alert("Eroarea " + error + " cu statusul: " + status)
+            });
+            site.setTab(3);
+            site.find = null;
+        };
+
+        //for search from the Find Info section with constraints
+        site.findInfo = function (){
+            alert(site.find.name + " " + site.find.vintage + " " + site.find.color);
             $http.get('freebase.json').success(function (data) {
                 var results = data;
                 site.wines = results;
@@ -18,6 +32,7 @@
                 alert("Eroarea " + error + " cu statusul: " + status)
             });
             site.setTab(3);
+            site.keyword = null;
         };
 
         $scope.goToFindInfo = function(){
@@ -33,7 +48,7 @@
             this.tab = activeTab;
         };
 
-        //pentru detalii
+        //for details
         $scope.open = function(wine) {
             $scope.showModal = true;
             $scope.wine = wine;
@@ -47,27 +62,12 @@
     });
 
 
-
-    /*app.controller('tabController', function () {
-        this.tab = 1;
-
-         this.isSet = function (checkTab) {
-            return this.tab === checkTab;
-         };
-
-        this.setTab = function (activeTab) {
-            this.tab = activeTab;
-        };
-    });
-*/
-
     app.controller('contactController', function () {
-        this.contact = {};
+        var contact = this;
 
-        this.addOpinion = function (opinions) {
-            opinions.push(this.contact);
+        contact.addOpinion = function () {
+            alert(contact.opinion.name);
 
-            this.contact = {};
         };
     });
 

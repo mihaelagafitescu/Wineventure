@@ -76,10 +76,10 @@ ul
 
 .input-text {
     min-width:250px;
-    margin-bottom: 5px;
+    margin-left: 15px;
 }
 
 .input-select {
-    min-width:200px;
-    margin-bottom: 7px;
+    min-width:250px;
+    margin-left: 15px;
 }

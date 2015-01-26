@@ -1,5 +1,5 @@
 
-<div ng-show="site.isSet(4)" ng-controller="contactController as contactCtrl">
+<div ng-show="site.isSet(4)" ng-controller="contactController as contact">
     <section>
         <h4>Contact information</h4>
 
@@ -18,22 +18,23 @@
 
     <hr class="horizontalDivider"> </hr>
 
-    <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addOption(opinion)">
+    <form name="contactForm" ng-submit="contactForm.$valid && contact.addOpinion()">
         <h4>Drop us a line</h4>
 
         <fieldset class="form-group">
-            <input ng-model="contactCtrl.opinion.name" type="text" class="form-control" placeholder="John Doe" title="Name"  required/>
+            <input ng-model="contact.opinion.name" type="text" class="form-control" placeholder="John Doe" title="Name"  required/>
         </fieldset>
         <fieldset class="form-group">
-            <textarea ng-model="contactCtrl.opinion.body" class="form-control" placeholder="Tell us what you think about Wineventure..." title="Opinion"></textarea>
+            <textarea ng-model="contact.opinion.body" class="form-control" placeholder="Tell us what you think about Wineventure..." title="Opinion"></textarea>
         </fieldset>
         <fieldset class="form-group">
-            <input ng-model="contactCtrl.opinion.author" type="email" class="form-control" placeholder="johnDoe@example.org" title="Email" required/>
+            <input ng-model="contact.opinion.author" type="email" class="form-control" placeholder="johnDoe@example.org" title="Email" required/>
         </fieldset>
         <fieldset class="form-group">
-            <input type="submit" class="btn btn-primary pull-right" value="Submit" />
+            <input type="submit" class="btn btn-primary pull-left" value="Submit" />
         </fieldset>
     </form>
+
 
 </div>
 
