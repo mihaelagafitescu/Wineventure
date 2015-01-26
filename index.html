@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="winesite">
+  <head>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/javascript" src="libs/angular.js"></script>
+    <script type="application/javascript" src="libs/angular-mocks.js"></script>
+    <script type="application/javascript" src="libs/json2.js"></script>
+    <script type="application/javascript" src="libs/minify.json.js"></script>
+    <script type="application/javascript" src="libs/angular-ui-bootstrap-modal.js"></script>
+    <!--<script type="application/javascript" src="sections.js"></script>-->
+    <script type="application/javascript" src="app.js"></script>
+
+  </head>
+
+  <body ng-controller="SiteController as site">
+
+    <div class="mainContent" >
+
+        <nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Wineventure</a>
+				</div>
+
+				<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+
+					<form class="navbar-form navbar-left" name="searchForm" role="search" ng-submit="searchForm.$valid && site.search()  ">
+						<fieldset class="form-group">
+							<input type="text" class="form-control search-text" ng-model="site.keyword" placeholder="Enter a keyword here or go to Find Info to start a search" required>
+						</fieldset>
+                        <fieldset class="form-group">
+                            <input type="submit" class="btn btn-primary pull-right" value="Go!" />
+                        </fieldset>
+					</form>
+
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+
+
+        <div >
+            <section class="sidebar">
+                <ul class="nav nav-pills nav-stacked">
+                    <li ng-class="{ active:site.isSet(1) }">
+                        <a href ng-click="site.setTab(1)">Home</a>
+                    </li>
+                    <li ng-class="{ active:site.isSet(2) }">
+                        <a href ng-click="site.setTab(2)">Find info</a>
+                    </li>
+                    <li ng-class="{ active:site.isSet(3) }">
+                        <a href ng-click="site.setTab(3)">Results</a>
+                    </li>
+                    <li ng-class="{ active:site.isSet(4) }">
+                        <a href ng-click="site.setTab(4)">Contact</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="contentCentered">
+                <welcome ng-show="site.isSet(1)" >
+                </welcome>
+
+                <query ng-show="site.isSet(2)">
+                </query>
+
+                <results ng-show="site.isSet(3)">
+                </results>
+
+                <contact ng-show="site.isSet(4)">
+
+                </contact>
+            </section>
+        </div>
+
+
+    </div>
+
+  </body>
+</html>

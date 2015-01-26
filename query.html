@@ -1,0 +1,68 @@
+
+<div ng-show="site.isSet(2)">
+
+    <h4>
+        Please let us know what wine are you trying to find by filling at least one of the inputs below:
+    </h4>
+
+    <hr class="horizontalDivider">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <label> Name:
+                <input ng-model="search.wine.name" type="text" class="form-control input-text"  title="Name"/>
+            </label> </br>
+            <label> Year:
+                <input ng-model="search.wine.year" type="text" class="form-control input-text"  title="Year"/>
+            </label> </br>
+            <label> Country:
+                <input ng-model="search.wine.country" type="text" class="form-control input-text"  title="Country"/>
+            </label> </br>
+            <label> Region:
+                <input ng-model="search.wine.region" type="text" class="form-control input-text"  title="Region"/>
+            </label> </br>
+            <label> Producer:
+                <input ng-model="search.wine.producer" type="text" class="form-control input-text"  title="Producer"/>
+            </label> </br>
+            <label> Alcohol percentage:
+                <input ng-model="search.wine.alcoholPercentage" type="text" class="form-control input-text"  title="AlcoholPercentage"/>
+            </label> </br>
+            <label> Vineyard:
+                <input ng-model="search.wine.vineyard" type="text" class="form-control input-text"  title="Vineyard"/>
+            </label>
+        </div>
+        <div class="col-sm-5">
+            <label> Color:
+                  <select class="form-control input-select" ng-model="search.wine.color">
+                      <option>White Wine</option>
+                      <option>Red Wine</option>
+                      <option>Rose Wine</option>
+                  </select>
+            </label>
+            <label> Wine type:
+                <select class="form-control input-select" ng-model="search.wine.wineType">
+                    <option>Dessert wine</option>
+                    <option>Red Wine</option>
+                    <option>Sparkling wine</option>
+                    <option>Ice wine</option>
+                    <option>Straw wine</option>
+                    <option>Still Wine</option>
+                    <option>Resinated wine</option>
+                    <option>Fortified wine</option>
+                </select>
+            </label>
+            <label> Fruit source:
+                <select class="form-control input-select" ng-model="search.wine.fruitSource">
+                    <option>Producer owned</option>
+                    <option>Purchased Juice</option>
+                    <option>Purchased Grapes</option>
+                </select>
+            </label>
+            <div class=" pull-left">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+            </div>
+        </div>
+    </div>
+
+
+</div>

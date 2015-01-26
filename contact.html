@@ -1,0 +1,39 @@
+
+<div ng-show="site.isSet(4)" ng-controller="contactController as contactCtrl">
+    <section>
+        <h4>Contact information</h4>
+
+        <ul >
+            <li>
+                <strong> Address:</strong> Facultatea de Informatică, Universitatea "Al. I. Cuza", General Berthelot, 16, IAŞI 700483, ROMANIA
+            </li>
+            <li>
+                <strong> Phone:</strong> +40 747 567271
+            </li>
+            <li>
+                <strong> E-mail:</strong> wineventure.wade@gmail.com
+            </li>
+        </ul>
+    </section>
+
+    <hr class="horizontalDivider"> </hr>
+
+    <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addOption(opinion)">
+        <h4>Drop us a line</h4>
+
+        <fieldset class="form-group">
+            <input ng-model="contactCtrl.opinion.name" type="text" class="form-control" placeholder="John Doe" title="Name"  required/>
+        </fieldset>
+        <fieldset class="form-group">
+            <textarea ng-model="contactCtrl.opinion.body" class="form-control" placeholder="Tell us what you think about Wineventure..." title="Opinion"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <input ng-model="contactCtrl.opinion.author" type="email" class="form-control" placeholder="johnDoe@example.org" title="Email" required/>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Submit" />
+        </fieldset>
+    </form>
+
+</div>
+

@@ -1,0 +1,85 @@
+.mainContent {
+    width: 1000px;
+    height: 600px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.sidebar {
+    float:left;
+    width:15%;
+}
+
+.contentCentered {
+    float: right;
+    margin:0 auto;
+    width:80%;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.horizontalDivider {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 10px  0px 35px 0px;
+    height: 0;
+    width: 100%;
+    max-height: 0;
+    font-size: 1px;
+    line-height: 0;
+    clear: both;
+    border: none;
+    border-top: 1px solid #820010;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+#wineDetails {
+    top:15%;
+    right:25%;
+    left:30%;
+    bottom:15%;
+    outline: none;
+}
+
+.detailsImage {
+    float: left;
+    margin-right: 20px;
+    zoom:1;
+    -moz-transform:scale(1);
+    -moz-transform-origin: 0 0;
+}
+
+.thumbnail {
+    min-height: 330px;
+}
+
+.search-text {
+    min-width: 450px;
+}
+
+.input-text {
+    min-width:250px;
+    margin-bottom: 5px;
+}
+
+.input-select {
+    min-width:200px;
+    margin-bottom: 7px;
+}
