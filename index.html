@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <script type="application/javascript" src="libs/angular.js"></script>
     <script type="application/javascript" src="libs/angular-mocks.js"></script>
@@ -18,8 +19,8 @@
 
     <div class="mainContent" >
 
-        <nav class="navbar navbar-default">
-			<div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top header">
+			<div class="container-fluid header-content col-md-12">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span>
@@ -27,12 +28,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Wineventure</a>
+					<a class="navbar-brand" href="#">
+                        <img src="resources/Logo.png" alt="Wineventure" class="logo">
+                    </a>
 				</div>
 
 				<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
 
-					<form class="navbar-form navbar-left" name="searchForm" role="search" ng-submit="searchForm.$valid && site.search()  ">
+					<form class="navbar-form navbar-left top-search-form" name="searchForm" role="search" ng-submit="searchForm.$valid && site.search()">
 						<fieldset class="form-group">
 							<input type="text" class="form-control search-text" ng-model="site.keyword" placeholder="Enter a keyword here or go to Find Info to start a search" required>
 						</fieldset>
@@ -45,44 +48,106 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-
-
-        <div >
-            <section class="sidebar">
-                <ul class="nav nav-pills nav-stacked">
-                    <li ng-class="{ active:site.isSet(1) }">
-                        <a href ng-click="site.setTab(1)">Home</a>
-                    </li>
-                    <li ng-class="{ active:site.isSet(2) }">
-                        <a href ng-click="site.setTab(2)">Find Info</a>
-                    </li>
-                    <li ng-class="{ active:site.isSet(3) }">
-                        <a href ng-click="site.setTab(3)">Results</a>
-                    </li>
-                    <li ng-class="{ active:site.isSet(4) }">
-                        <a href ng-click="site.setTab(4)">Contact</a>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="contentCentered">
-                <welcome ng-show="site.isSet(1)" >
-                </welcome>
-
-                <query ng-show="site.isSet(2)">
-                </query>
-
-                <results ng-show="site.isSet(3)">
-                </results>
-
-                <contact ng-show="site.isSet(4)">
-
-                </contact>
-            </section>
-
+        <div class="find-info">
+            <div class="find-info-content col-md-12">
+                <div class="find-info-content-message">
+                    <span>Please let us know what wine are you trying to find by filling at least one of the inputs below:</span>
+                </div>
+                <div class="find-info-column col-md-6">
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Name:</span>
+                            <input type="text" class="form-control input-text" title="Name"/>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Country:</span>
+                            <input type="text" class="form-control input-text" title="Country"/>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Region:</span>
+                            <input type="text" class="form-control input-text" title="Region"/>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Producer:</span>
+                            <input type="text" class="form-control input-text" title="Producer"/>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Vineyard:</span>
+                            <input type="text" class="form-control input-text" title="Vineyard"/>
+                        </label>
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Year:</span>
+                            <input type="number" class="form-control input-text" title="Year" min="1900" max="2015"/>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Alcohol percentage:</span>
+                            <input type="number" class="form-control input-text" min="1" max="50" title="AlcoholPercentage"/>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Color:</span>
+                            <select class="form-control input-text">
+                                <option>White Wine</option>
+                                <option>Red Wine</option>
+                                <option>Rose Wine</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Wine type:</span>
+                            <select class="form-control input-text">
+                                <option>Dessert wine</option>
+                                <option>Red Wine</option>
+                                <option>Sparkling wine</option>
+                                <option>Ice wine</option>
+                                <option>Straw wine</option>
+                                <option>Still Wine</option>
+                                <option>Resinated wine</option>
+                                <option>Fortified wine</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>
+                            <span class="label-title">Fruit source:</span>
+                            <select class="form-control input-text">
+                                <option>Producer owned</option>
+                                <option>Purchased Juice</option>
+                                <option>Purchased Grapes</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                </div>
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <fieldset class="form-group">
+                            <input type="submit" class="btn btn-primary find-info-btn" value="Look over your results" />
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="search-results">
+            <div class="search-results-content col-md-12">
 
-
+            </div>
+        </div>
     </div>
 
   </body>
