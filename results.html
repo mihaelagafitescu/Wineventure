@@ -9,7 +9,7 @@
     <div class="row" ng-show="site.wines.length">
         <div class="col-sm-6 col-md-4" ng-repeat="wine in site.wines">
             <div class="thumbnail" >
-                <img  src="https://usercontent.googleapis.com/freebase/v1/image{{wine.id}}">
+                <img  src="https://usercontent.googleapis.com/freebase/v1/image{{wine.id}}"/>
                 <div class="caption">
                     <h4>{{wine.name}}</h4>
                         <p><strong>Producer:</strong> {{wine.wine_producer}}</p>
@@ -33,7 +33,7 @@
                 <h4 class="modal-title">{{wine.name}}</h4>
             </div>
             <div class="panel-body ">
-                <img src="https://usercontent.googleapis.com/freebase/v1/image{{wine.id}}" class="detailsImage">
+                <img src="https://usercontent.googleapis.com/freebase/v1/image{{wine.id}}" class="detailsImage"/>
                 <p ng-show="wine.wine_producer"><strong>Producer:</strong> {{wine.wine_producer}}</p>
                 <p ng-show="wine.color"><strong>Color:</strong> {{wine.color}}</p>
                 <p ng-show="wine.vintage"><strong>Year:</strong> {{wine.vintage}}</p>
@@ -43,6 +43,13 @@
                 <p ng-show="wine.country"><strong>Country:</strong> {{wine.country}}</p>
                 <p ng-show="wine.region"><strong>Region:</strong> {{wine.region}}</p>
                 <p ng-show="wine.wine_sub_region"><strong>Sub-region:</strong> {{wine.wine_sub_region}}</p>
+
+                <p ng-show="wine.color == 'Red Wine'">
+                <span ng-repeat="extraInfo in site.redWineSuggestions | shuffle | limitTo:2">
+                    {{extraInfo}}
+                </span>
+                    ! This wine is not recommended for cardiac persons, since it is a red wine that increseas blodd presure.
+                </p>
             </div>
         </div>
 
