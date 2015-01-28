@@ -9,7 +9,7 @@
                 <div class="col-md-6" ng-repeat="wine in site.wines">
                     <div class="thumbnail">
                         <div class="col-md-3">
-                            <img  src="https://usercontent.googleapis.com/freebase/v1/image{{wine.id}}" class="search-results-div-img"/>
+                            <img  src="https://usercontent.googleapis.com/freebase/v1/image{{site.removeBackslash(wine.id)}}" class="search-results-div-img"/>
                         </div>
                         <div class="caption col-md-9">
                             <span class="thumbnail-title">{{wine.name}}</span>
@@ -34,7 +34,7 @@
             <div class="panel-body">
                 <div class="col-md-12">
                     <div class="col-lg-4">
-                        <img src="https://usercontent.googleapis.com/freebase/v1/image{{wine.id}}?maxwidth=150&maxheight=150" class="detailsImage"/>
+                        <img src="https://usercontent.googleapis.com/freebase/v1/image{{site.removeBackslash(wine.id)}}?maxwidth=150&maxheight=150" class="detailsImage"/>
                     </div>
                     <div class="col-md-8">
                         <p ng-show="wine.wine_producer"><strong>Producer:</strong> {{wine.wine_producer}}</p>

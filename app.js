@@ -44,6 +44,7 @@
             //alert(url);
 
             $http.get(url).success(function (data) {
+//            $http.get('freebase.json').success(function (data) {
                 var results = data;
                 site.wines = results;
             }).error(function (error, code) {
