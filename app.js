@@ -10,18 +10,21 @@
         site.wines = [];
         site.displayResults = false;
 
-        site.redWineSuggestions = ['aa',
-            'bb',
-            'cc',
-            'dd'
+        site.redWineSuggestions = [
+            'If you consume fat foods, Wineventure recommends you Red wine, since it can lower your cholesterol.',
+            'Wineventure recommends you Red wine because prevents tooth decay by hardening your enamel.',
+            'If you are fighting off a cold, Wineventure recommends you Red wine, because it contains antioxidants.',
+            'Wineventure recommends you Red wine, which helps preventing damage to the blood vessels thanks to resveratrol (an ingredient found in the skin of red grapes).',
+            'Wineventure recommends you Red wine, which helps keeping your memory sharp thanks to resveratrol (an ingredient found in the skin of red grapes).'
         ];
         site.sparklingWineSuggestions = [
-            'bb',
-            'cc'
+            'If you are on a diet, Wineventure suggests you Sparkling wine, since it has fewer calories than red or white wine.',
+            'If you partied all night long, Wineventure suggests you Sparkling wine, since it prevents nausea, the feelings of irritation and anger caused by a hangover.',
+            'Wineventure warns you that Sparkling wine is a common trigger for migraines, if consumed in bigger quantities.'
         ];
         site.whiteWineSuggestions = [
-            'bb',
-            'cc'
+            'Wineventure suggests you White wine for keeping your lung tissues healthy.',
+            'Wineventure warns you that White wine is the worst wine for your teeth, since it is the most acidic from wines.'
         ];
 
         site.randIndex = function (min, max) {
@@ -72,14 +75,6 @@
             site.keyword = null;
         };
 
-        //for tabs
-        site.isSet = function (checkTab) {
-            return this.tab === checkTab;
-        };
-
-        site.setTab = function (activeTab) {
-            this.tab = activeTab;
-        };
 
         //for details
         $scope.open = function (wine) {
@@ -119,7 +114,6 @@
             templateUrl: "results.html"
         };
     });
-
 
 
 
