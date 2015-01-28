@@ -49,7 +49,7 @@
             }).error(function (error, code) {
                 alert("Eroarea " + error + " cu statusul: " + code);
             });
-
+            
             site.displayResults = true;
             site.find = null;
         };
