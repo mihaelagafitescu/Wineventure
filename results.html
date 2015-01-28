@@ -45,11 +45,12 @@
                 <p ng-show="wine.wine_sub_region"><strong>Sub-region:</strong> {{wine.wine_sub_region}}</p>
 
                 <p ng-show="wine.color == 'Red Wine'">
-                <span ng-repeat="extraInfo in site.redWineSuggestions | shuffle | limitTo:2">
-                    {{extraInfo}}
+                <span >
+                    {{site.redWineSuggestions[site.randIndex(0,site.redWineSuggestions.length-1)]}}
                 </span>
                     ! This wine is not recommended for cardiac persons, since it is a red wine that increseas blodd presure.
                 </p>
+
             </div>
         </div>
 

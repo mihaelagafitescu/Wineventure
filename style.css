@@ -147,3 +147,29 @@ body{
     font-style: italic;
     margin: 30px;
 }
+
+
+
+.search-results{
+
+}
+
+.search-results-content-content{
+
+}
+
+.search-results-content-message{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 22px;
+    color: #000;
+    padding: 20px;
+    width: 100%;
+}
+
+.go-details{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
