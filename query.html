@@ -1,3 +1,109 @@
+<div class="find-info">
+    <div class="find-info-content col-md-12">
+        <div class="find-info-content-message">
+            <span>Please let us know what wine are you trying to find by filling at least one of the inputs below:</span>
+        </div>
+        <form name="findInfoForm" role="search"  ng-submit="findInfoForm.$valid && site.findInfo()">
+            <div class="find-info-column col-md-6">
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Name:</span>
+                        <input type="text" ng-model="site.find.name" class="form-control input-text" title="Name"/>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Country:</span>
+                        <input type="text" ng-model="site.find.country" class="form-control input-text" title="Country"/>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Region:</span>
+                        <input type="text" ng-model="site.find.region" class="form-control input-text" title="Region"/>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Producer:</span>
+                        <input type="text" ng-model="site.find.wine_producer" class="form-control input-text" title="Producer"/>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Vineyard:</span>
+                        <input type="text" ng-model="site.find.vineyard" class="form-control input-text" title="Vineyard"/>
+                    </label>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Year:</span>
+                        <input type="number" ng-model="site.find.vintage" class="form-control input-text" title="Year" min="1900" max="2015"/>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Alcohol percentage:</span>
+                        <input type="number" ng-model="site.find.percentage_alcohol" class="form-control input-text" min="1" max="50" title="AlcoholPercentage"/>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Color:</span>
+                        <select class="form-control input-text" ng-model="site.find.color">
+                            <option>White Wine</option>
+                            <option>Red Wine</option>
+                            <option>Rose Wine</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Wine type:</span>
+                        <select class="form-control input-text" ng-model="site.find.wine_type">
+                            <option>Dessert wine</option>
+                            <option>Red Wine</option>
+                            <option>Sparkling wine</option>
+                            <option>Ice wine</option>
+                            <option>Straw wine</option>
+                            <option>Still Wine</option>
+                            <option>Resinated wine</option>
+                            <option>Fortified wine</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>
+                        <span class="label-title">Fruit source:</span>
+                        <select class="form-control input-text" ng-model="site.find.fruit_source">
+                            <option>Producer owned</option>
+                            <option>Purchased Juice</option>
+                            <option>Purchased Grapes</option>
+                        </select>
+                    </label>
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+                <div class="text-center">
+                    <fieldset class="form-group">
+                        <input type="submit" class="btn btn-primary find-info-btn" value="Look over your results" />
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<!--old version-->
+
+<!--
 <div ng-show="site.isSet(2)">
 
     <h4>
@@ -90,5 +196,5 @@
         </div>
     </form>
 
-
 </div>
+-->

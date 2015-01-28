@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default navbar-fixed-top header">
+    <div class="container-fluid header-content col-md-12">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="resources/Logo.png" alt="Wineventure" class="logo">
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+
+            <form class="navbar-form navbar-left top-search-form" name="searchForm" role="search" ng-submit="searchForm.$valid && site.search()">
+                <fieldset class="form-group">
+                    <input type="text" class="form-control search-text" ng-model="site.keyword" placeholder="Enter a keyword here or refine the search below" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <input type="submit" class="btn btn-primary pull-right go-details" value="Go!" />
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+<!--old version-->
+
+<!--
+<div ng-show="site.isSet(1)">
+
+    <div class="jumbotron">
+        <h1>Hello, wine lover!</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend hendrerit scelerisque. Sed at mi vel magna sollicitudin dictum. Aenean aliquam dolor eu luctus cursus. Vivamus finibus maximus maximus. Nulla scelerisque vulputate purus nec iaculis. Quisque bibendum interdum tincidunt. Etiam orci quam, faucibus vitae nisi eu, rutrum ullamcorper tellus. Nullam mattis sem non porttitor feugiat. In hac habitasse platea dictumst. Etiam dignissim lorem orci, eget malesuada elit bibendum suscipit. Donec dictum ligula nec purus commodo egestas.
+
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button" ng-click="goToFindInfo()">Learn more about wines</a></p>
+    </div>
+
+
+</div>
+-->

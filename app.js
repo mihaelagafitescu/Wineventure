@@ -99,10 +99,10 @@
 
 
 
-    /*app.directive("welcome", function () {
+    app.directive("header", function () {
         return {
             restrict: 'E',
-            templateUrl: "welcome.html"
+            templateUrl: "header.html"
         };
     });
 
@@ -118,7 +118,7 @@
             restrict: 'E',
             templateUrl: "results.html"
         };
-    });*/
+    });
 
 
 
