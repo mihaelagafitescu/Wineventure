@@ -19,58 +19,54 @@
         ];
         site.sparklingWineSuggestions = [
             'If you are on a diet, Wineventure suggests you Sparkling wine, since it has fewer calories than red or white wine.',
-            'If you partied all night long, Wineventure suggests you Sparkling wine, since it prevents nausea, the feelings of irritation and anger caused by a hangover.',
             'Wineventure warns you that Sparkling wine is a common trigger for migraines, if consumed in bigger quantities.'
         ];
         site.whiteWineSuggestions = [
             'Wineventure suggests you White wine for keeping your lung tissues healthy.',
+            'If you partied all night long, Wineventure suggests you White wine, since it prevents nausea, the feelings of irritation and anger caused by a hangover.',
             'Wineventure warns you that White wine is the worst wine for your teeth, since it is the most acidic from wines.'
         ];
 
         site.randIndex = function (min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+        };
+
+        site.removeBackslash = function (mystring) {
+            mystring = mystring.replace('\\','');
+            return mystring;
+        };
+
 
         //for search from the topbar with keyword
         site.search = function () {
-            //alert(site.keyword);
-            var url = '';
-            url = url + '/?search=' + site.keyword;
-         //   alert(url);
+            var url = 'http://192.168.0.102:7001/wineventure/api/v1/wines';
+            url = url + '/search/?key=' + site.keyword;
+            //alert(url);
 
-            $http.get('freebaseK.json').success(function (data) {
+            $http.get(url).success(function (data) {
                 var results = data;
                 site.wines = results;
-            }).error(function (error, status) {
-                alert("Eroarea " + error + " cu statusul: " + status)
+            }).error(function (error, code) {
+                alert("Eroarea " + error + " cu statusul: " + code);
             });
+
             site.displayResults = true;
             site.find = null;
         };
 
         //for search from the Find Info section with constraints
         site.findInfo = function () {
-            var url = '';
-            url = url + '/?name=' + site.find.name +
-                    '&country=' + site.find.country +
-                    '&region=' + site.find.region +
-                    '&wine_producer=' + site.find.wine_producer +
-                    '&vineyard=' + site.find.vineyard +
-                    '&vintage=' + site.find.vintage +
-                    '&percentage_alcohol=' + site.find.percentage_alcohol +
-                    '&color=' + site.find.color +
-                    '&wine_type=' + site.find.wine_type +
-                    '&fruit_source=' + site.find.fruit_source;
-            //alert(site.find.name + " " + site.find.vintage + " " + site.find.color);
+            var url = 'http://192.168.0.102:7001/wineventure/api/v1/wines';
 
-            // $http.post('/wines',site.find)
-
-            $http.get('freebase.json').success(function (data) {
+            $http.post(url, site.find).success(function (data) {
+                // alert(data.id);
                 var results = data;
                 site.wines = results;
-            }).error(function (error, status) {
-                alert("Eroarea " + error + " cu statusul: " + status)
+            }).error(function (error, code) {
+                alert("Eroarea " + error + " cu statusul: " + code);
             });
+
+
             site.displayResults = true;
             site.keyword = null;
         };
